@@ -3,7 +3,7 @@ const nodeExternals = require("webpack-node-externals"); // Jika Anda menggunaka
 
 module.exports = {
   entry: "./src/index.js", // Titik masuk file Anda
-  target: "node", // Target untuk browser
+  target: "web", // Target untuk browser
   externals: [nodeExternals()], // Jika Anda ingin mengecualikan dependensi dari node_modules
   output: {
     path: path.resolve(__dirname, "dist"),
