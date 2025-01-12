@@ -3,11 +3,11 @@ const nodeExternals = require("webpack-node-externals"); // Jika Anda menggunaka
 
 module.exports = {
   entry: "./src/index.js", // Titik masuk file Anda
-  target: "web", // Target untuk browser
-  externals: [nodeExternals()], // Jika Anda ingin mengecualikan dependensi dari node_modules
+  target: "web", // Target untuk browser //
+  // externals: [nodeExternals()], // Jika Anda ingin mengecualikan dependensi dari node_modules
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "apihelper.js",
+    filename: "apihelper.bundle.js",
     library: "apihelper",
     libraryTarget: "umd",
     globalObject: "this",
@@ -17,6 +17,9 @@ module.exports = {
     alias: {
       crypto: require.resolve("crypto-browserify"),
       stream: require.resolve("stream-browserify"),
+    },
+    fallback: {
+      buffer: false, // Tidak menyertakan polyfill untuk buffer
     },
     extensions: [".js"],
   },

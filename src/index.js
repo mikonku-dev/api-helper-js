@@ -1,5 +1,3 @@
-const SignatureGenerator = require("./SignatureGenerator");
+import SignatureGenerator from "./SignatureGenerator";
 
-module.exports = {
-  SignatureGenerator,
-};
+window.SignatureGenerator = SignatureGenerator; // Mengekspor SignatureGenerator ke global object di browser
